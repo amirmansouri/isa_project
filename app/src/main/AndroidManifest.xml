@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Isa_mobile">
         <activity
+            android:name="nav_bottom.nav_bottom"
+            android:exported="false" />
+        <activity
+            android:name="Login.Login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

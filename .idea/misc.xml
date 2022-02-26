@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main.xml" value="0.10081053698074975" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main.xml" value="0.128" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_nav_bottom.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_first_screen.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_home.xml" value="0.10081053698074975" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_second_screen.xml" value="0.1" />

@@ -9,6 +9,7 @@ import com.example.isa_mobile.R
 import com.example.isa_mobile.onboarding.screens.FirstScreen
 import com.example.isa_mobile.onboarding.screens.SecondScreen
 import com.example.isa_mobile.onboarding.screens.ThirdScreen
+
 import kotlinx.android.synthetic.main.fragment_view_pager.view.*
 
 class ViewPagerFragment : Fragment() {

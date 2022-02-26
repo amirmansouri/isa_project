@@ -1,11 +1,15 @@
 package com.example.isa_mobile.onboarding.screens
 
+import Login.Login
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.isa_mobile.R
@@ -14,20 +18,26 @@ import kotlinx.android.synthetic.main.fragment_first_screen.view.*
 import kotlinx.android.synthetic.main.fragment_third_screen.view.*
 
 class ThirdScreen : Fragment() {
-
+  lateinit var finish :TextView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+      //   Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_third_screen, container, false)
 
         view.finish.setOnClickListener {
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+
+            val intent = Intent(this@ThirdScreen.context,Login::class.java)
+            startActivity(intent)
+
             onBoardingFinished()
         }
+//        finish.setOnClickListener{
+//            Toast.makeText(this@ThirdScreen.context,"amir mansouri",Toast.LENGTH_SHORT).show()
+//        }
 
-        return view
+       return view
     }
 
     private fun onBoardingFinished(){
@@ -37,4 +47,10 @@ class ThirdScreen : Fragment() {
         editor.apply()
     }
 
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        finish.setOnClickListener{
+//            Toast.makeText(this@ThirdScreen.context,"",Toast.LENGTH_SHORT).show()
+//        }
+//    }
 }

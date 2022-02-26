@@ -1,6 +1,8 @@
 package com.example.isa_mobile
 
+import Login.Login
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -19,7 +21,9 @@ class SplashFragment : Fragment() {
 
         Handler().postDelayed({
             if(onBoardingFinished()){
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                //findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                val intent = Intent(this@SplashFragment.context,Login::class.java)
+                startActivity(intent)
             }else{
                 findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
             }
