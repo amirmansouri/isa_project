@@ -24,10 +24,11 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
       val  auth= FirebaseAuth.getInstance()
-        Register.setOnClickListener {
+        Registerbtn.setOnClickListener {
             var intent =Intent(this,Register::class.java)
             startActivity(intent)
-            finish()
+            overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
+           // finish()
         }
 
 

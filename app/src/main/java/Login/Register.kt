@@ -14,18 +14,25 @@ class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        supportActionBar?.hide()
       val  auth= FirebaseAuth.getInstance()
         val db= FirebaseFirestore.getInstance()
-        Continue.setOnClickListener {
+        btnlogin.setOnClickListener{
+            intent = Intent(this,Login::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right)
+
+        }
+        register_compte.setOnClickListener {
             if(checking())
             {
                 var email=EmailRegister.text.toString()
                 var password= PasswordRegister.text.toString()
                 var name=Name.text.toString()
-                var phone=Phone.text.toString()
+              //  var phone=Phone.text.toString()
                 val user= hashMapOf(
                     "Name" to name,
-                    "Phone" to phone,
+                  //  "Phone" to phone,
                     "email" to email
                 )
                 val Users=db.collection("USERS")
@@ -68,7 +75,7 @@ class Register : AppCompatActivity() {
 
     private fun checking():Boolean{
         if(Name.text.toString().trim{it<=' '}.isNotEmpty()
-            && Phone.text.toString().trim{it<=' '}.isNotEmpty()
+         //   && Phone.text.toString().trim{it<=' '}.isNotEmpty()
             && EmailRegister.text.toString().trim{it<=' '}.isNotEmpty()
             && PasswordRegister.text.toString().trim{it<=' '}.isNotEmpty()
         )

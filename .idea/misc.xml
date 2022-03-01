@@ -4,23 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.134" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/btn_top.xml" value="0.1555" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic__home.xml" value="0.134" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_article.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_delivery.xml" value="0.134" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_email.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_food.xml" value="0.134" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_launcher_background2.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_launcher_plant_background.xml" value="0.134" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_lock.xml" value="0.1555" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_login_bg.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_payment.xml" value="0.121" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_person.xml" value="0.1555" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_plant_background.xml" value="0.134" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_profile.xml" value="0.1" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_register_bg.xml" value="0.1555" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_report.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_splash_screen.xml" value="0.134" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/login_btn_bg.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main.xml" value="0.128" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_nav_bottom.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_navigation_bottom.xml" value="0.264" />
-        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_article.xml" value="0.14479166666666668" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_camera_scan.xml" value="0.25" />
