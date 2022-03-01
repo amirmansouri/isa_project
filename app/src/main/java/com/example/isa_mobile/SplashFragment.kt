@@ -23,7 +23,7 @@ class SplashFragment : Fragment() {
             if(onBoardingFinished()){
                 //findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
                 val intent = Intent(this@SplashFragment.context,Login::class.java)
-                startActivity(intent)
+               startActivity(intent)
             }else{
                 findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
             }
@@ -37,5 +37,11 @@ class SplashFragment : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         return sharedPref.getBoolean("Finished", false)
     }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        if (onBoardingFinished()){val intent = Intent(this@SplashFragment.context,Login::class.java)
+//            startActivity(intent)}
+//    }
 
 }

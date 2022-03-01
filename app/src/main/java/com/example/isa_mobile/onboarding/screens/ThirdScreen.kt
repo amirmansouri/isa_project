@@ -33,9 +33,7 @@ class ThirdScreen : Fragment() {
 
             onBoardingFinished()
         }
-//        finish.setOnClickListener{
-//            Toast.makeText(this@ThirdScreen.context,"amir mansouri",Toast.LENGTH_SHORT).show()
-//        }
+
 
        return view
     }
@@ -47,10 +45,9 @@ class ThirdScreen : Fragment() {
         editor.apply()
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        finish.setOnClickListener{
-//            Toast.makeText(this@ThirdScreen.context,"",Toast.LENGTH_SHORT).show()
-//        }
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        val intent = Intent(this@ThirdScreen.context,Login::class.java)
+//           startActivity(intent)
+    }
 }
