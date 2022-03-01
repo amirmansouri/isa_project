@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959506062718",
+    "project_id": "isamobile-bc341",
+    "storage_bucket": "isamobile-bc341.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959506062718:android:d9c725dfecacdf3825272f",
+        "android_client_info": {
+          "package_name": "com.example.isa_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959506062718-gsbrhfd23mde3hj3jq26c7frrt3mllis.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-McQOKfKir8LbSbMl8b6WfVZ966ouRzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959506062718-gsbrhfd23mde3hj3jq26c7frrt3mllis.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
