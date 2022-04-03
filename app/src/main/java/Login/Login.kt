@@ -1,29 +1,24 @@
 package Login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.isa_mobile.MainActivity
 import com.example.isa_mobile.R
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
+import fragment_all.ProfileFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 class Login : AppCompatActivity() {
-    private val mAuth = FirebaseAuth.getInstance()
+   // private val mAuth = FirebaseAuth.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
       val  auth= FirebaseAuth.getInstance()
+
         Registerbtn.setOnClickListener {
             var intent =Intent(this,Register::class.java)
             startActivity(intent)
@@ -39,6 +34,7 @@ class Login : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
+
                             var intent =Intent(this,homeActivity::class.java)
                             intent.putExtra("email",email)
                             startActivity(intent)
@@ -53,6 +49,9 @@ class Login : AppCompatActivity() {
             }
         }
     }
+
+
+
     private fun checking():Boolean
     {
         if(Email.text.toString().trim{it<=' '}.isNotEmpty()
@@ -62,6 +61,7 @@ class Login : AppCompatActivity() {
         }
         return false
                 }
+
         }
 //        val textV = findViewById<TextView>(R.id.textView2)
 //        val buttonClick = findViewById<Button>(R.id.blogin)

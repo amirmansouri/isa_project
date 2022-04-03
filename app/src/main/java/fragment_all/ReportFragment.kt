@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.isa_mobile.R
 
 
-class ReportFragment : Fragment() {
+class ReportFragment<T> : Fragment() {
 
 
     override fun onCreateView(

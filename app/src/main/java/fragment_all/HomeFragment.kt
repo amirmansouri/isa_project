@@ -32,8 +32,6 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_todo, container, false)
-
-
         return view
     }
 

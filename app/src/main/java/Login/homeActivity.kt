@@ -18,12 +18,14 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class homeActivity : AppCompatActivity() {
+
     val CITY: String = "Tunis"
     val API: String = "8d00c2f11f01dba13861f2f278323fb3"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        setContentView(R.layout.activity_home)
-
+        supportActionBar?.hide()
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.fragment_nav)
         bottomNavigationView.setupWithNavController(navController)
@@ -97,7 +99,7 @@ class homeActivity : AppCompatActivity() {
 
             //    Views populated, Hiding the loader, Showing the main design
                findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
-        //       findViewById<RelativeLayout>(R.id.mainContainer).visibility = View.VISIBLE
+             //   findViewById<RelativeLayout>(R.id.mainContainer).visibility = View.VISIBLE
 
             } catch (e: Exception) {
                findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
@@ -106,4 +108,8 @@ class homeActivity : AppCompatActivity() {
 
         }
     }
+    /////profile
+
+
+
 }

@@ -33,10 +33,10 @@ class Register : AppCompatActivity() {
                 val user= hashMapOf(
                     "Name" to name,
                   //  "Phone" to phone,
-                    "email" to email
+                    "email" to email,
                 )
-                val Users=db.collection("USERS")
-                val query =Users.whereEqualTo("email",email).get()
+                val userISA=db.collection("userISA")
+                val query =userISA.whereEqualTo("email",email).get()
                     .addOnSuccessListener {
                             tasks->
                         if(tasks.isEmpty)
@@ -46,7 +46,7 @@ class Register : AppCompatActivity() {
                                         task->
                                     if(task.isSuccessful)
                                     {
-                                        Users.document(email).set(user)
+                                        userISA.document(name).set(user)
                                         val intent=Intent(this,Login::class.java)
                                         intent.putExtra("email",email)
                                         startActivity(intent)
@@ -61,7 +61,7 @@ class Register : AppCompatActivity() {
                         else
                         {
                             Toast.makeText(this,"User Already Registered", Toast.LENGTH_LONG).show()
-                            val intent= Intent(this, MainActivity::class.java)
+                            val intent= Intent(this, Login::class.java)
                             startActivity(intent)
                         }
                     }

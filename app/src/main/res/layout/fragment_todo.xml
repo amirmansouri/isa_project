@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="fragment_all.HomeFragment">
 
+
     <TextView
         android:id="@+id/updated_at"
         android:layout_width="wrap_content"
@@ -242,6 +243,7 @@
         android:layout_height="wrap_content" android:layout_centerInParent="true"
         android:visibility="gone" android:text="Something went wrong"
         tools:ignore="MissingConstraints" />
+
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="429dp"

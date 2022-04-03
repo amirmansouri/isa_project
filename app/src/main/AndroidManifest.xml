@@ -12,19 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Isa_mobile">
         <activity
+            android:name="fragment_all.testdata"
+            android:exported="false" />
+
+        <activity
             android:name="Login.Register"
             android:exported="false" />
         <activity
-            android:name="Login.homeActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name="nav_bottom.Navigation_bottom"
             android:exported="false" />
         <activity
-            android:name="Login.Login"
+            android:name="Login.homeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="Login.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
