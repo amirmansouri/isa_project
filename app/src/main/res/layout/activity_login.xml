@@ -29,6 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -47,7 +48,7 @@
             android:background="@drawable/login_btn_bg"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="Register"
+            android:text="@string/Register"
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
@@ -56,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="LOGIN"
+            android:text="@string/login"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -92,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="6dp"
-                    android:hint="email"
+                    android:hint="@string/Email"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_lock"
                     android:drawablePadding="6dp"
-                    android:hint="Password"
+                    android:hint="@string/Password"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -122,7 +123,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
        android:background="@drawable/login_btn_bg"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -130,4 +131,15 @@
         app:layout_constraintEnd_toEndOf="@+id/cardView2"
         app:layout_constraintStart_toStartOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+    <TextView
+        android:id="@+id/changeLangue"
+        android:layout_width="42dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/language"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,10 +29,11 @@ class Register : AppCompatActivity() {
                 var email=EmailRegister.text.toString()
                 var password= PasswordRegister.text.toString()
                 var name=Name.text.toString()
+                var phone=Phone.text.toString()
               //  var phone=Phone.text.toString()
                 val user= hashMapOf(
                     "Name" to name,
-                  //  "Phone" to phone,
+                   "Phone" to phone,
                     "email" to email,
                 )
                 val userISA=db.collection("userISA")
@@ -46,7 +47,7 @@ class Register : AppCompatActivity() {
                                         task->
                                     if(task.isSuccessful)
                                     {
-                                        userISA.document(name).set(user)
+                                     userISA.document(email).set(user)
                                         val intent=Intent(this,Login::class.java)
                                         intent.putExtra("email",email)
                                         startActivity(intent)
@@ -75,7 +76,7 @@ class Register : AppCompatActivity() {
 
     private fun checking():Boolean{
         if(Name.text.toString().trim{it<=' '}.isNotEmpty()
-         //   && Phone.text.toString().trim{it<=' '}.isNotEmpty()
+            && Phone.text.toString().trim{it<=' '}.isNotEmpty()
             && EmailRegister.text.toString().trim{it<=' '}.isNotEmpty()
             && PasswordRegister.text.toString().trim{it<=' '}.isNotEmpty()
         )

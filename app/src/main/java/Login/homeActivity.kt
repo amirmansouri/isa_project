@@ -1,13 +1,12 @@
 package Login
 
-import android.content.Intent
 import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.isa_mobile.R
@@ -30,7 +29,7 @@ class homeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment_nav)
         bottomNavigationView.setupWithNavController(navController)
        weatherTask().execute()
-
+setdata()
     }
 //api weather openweathermap.org
     inner class weatherTask() : AsyncTask<String, Void, String>() {
@@ -108,7 +107,10 @@ class homeActivity : AppCompatActivity() {
 
         }
     }
-    /////profile
+  fun setdata(){
+      val sessionId = intent.getStringExtra("amir")
+      Toast.makeText(this@homeActivity,"data en "+sessionId,Toast.LENGTH_LONG).show()
+  }
 
 
 

@@ -28,8 +28,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:padding="3dp"
-                android:scaleType="centerInside"
-                />
+                android:scaleType="centerInside" />
 
         </RelativeLayout>
 
@@ -50,11 +49,10 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-             />
+            android:scaleType="centerInside" />
 
     </RelativeLayout>
 
@@ -157,6 +155,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/layoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -164,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="@string/Email"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -194,7 +193,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Phone"
+                    android:text="@string/Phone"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 

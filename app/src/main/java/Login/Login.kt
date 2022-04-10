@@ -1,104 +1,127 @@
 package Login
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.isa_mobile.R
 import com.google.firebase.auth.FirebaseAuth
 import fragment_all.ProfileFragment
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 
 class Login : AppCompatActivity() {
-   // private val mAuth = FirebaseAuth.getInstance()
+    // private val mAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
-      val  auth= FirebaseAuth.getInstance()
+        val auth = FirebaseAuth.getInstance()
 
         Registerbtn.setOnClickListener {
-            var intent =Intent(this,Register::class.java)
+            var intent = Intent(this, Register::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.slide_from_right,R.anim.slide_to_left)
-           // finish()
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left)
+            // finish()
         }
-
-
+        changeLangue.setOnClickListener {
+            showlang()
+        }
         Login.setOnClickListener {
-            if(checking()){
-                val email=Email.text.toString()
-                val password= Password.text.toString()
+            if (checking()) {
+                val email = Email.text.toString()
+                val password = Password.text.toString()
+
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
+
                         if (task.isSuccessful) {
 
-                            var intent =Intent(this,homeActivity::class.java)
-                            intent.putExtra("email",email)
+                            var intent = Intent(this, homeActivity::class.java)
+                            intent.putExtra("email", email)
                             startActivity(intent)
                             finish()
+//                            /***********************************/
+//                            var transaction: FragmentTransaction? =
+//                                supportFragmentManager.beginTransaction()
+//                            var bundle: Bundle? = Bundle()
+//                            val myMessage = "Stack Overflow is cool!"
+//                            bundle!!.putString("message", myMessage)
+//                            val fragInfo = ProfileFragment()
+//                            fragInfo.arguments = bundle
+
+                            //       transaction!!.replace(R.id.layoutEmail, fragInfo).commit()
+
+
+//                            val bundle = Bundle()
+//                            bundle.putString("params", "My String data")
+
+// set MyFragment Arguments
+//                            val myObj = ProfileFragment()
+//                            myObj.setArguments(bundle)
+
                         } else {
-                            Toast.makeText(this, "Wrong Details", Toast.LENGTH_LONG).show()
+                            val wrong = getString(R.string.wrong_data)
+                            Toast.makeText(this, "$wrong", Toast.LENGTH_LONG).show()
                         }
                     }
-            }
-            else{
-                Toast.makeText(this,"Enter the Details",Toast.LENGTH_LONG).show()
+            } else {
+                val detail = getString(R.string.Enter_the_Details)
+
+                Toast.makeText(this, "$detail", Toast.LENGTH_LONG).show()
             }
         }
     }
 
+    private fun checking(): Boolean {
+        if (Email.text.toString().trim { it <= ' ' }.isNotEmpty()
+            && Password.text.toString().trim { it <= ' ' }.isNotEmpty()
 
-
-    private fun checking():Boolean
-    {
-        if(Email.text.toString().trim{it<=' '}.isNotEmpty()
-            && Password.text.toString().trim{it<=' '}.isNotEmpty())
-        {
+        ) {
             return true
         }
         return false
-                }
+    }
 
+    private fun showlang() {
+        val listlangue = arrayOf("عربي")
+        val mBuilder = AlertDialog.Builder(this@Login)
+        mBuilder.setTitle("chose Lang")
+        mBuilder.setSingleChoiceItems(listlangue, -1) { dialog, which
+            ->
+            if (which == 0) {
+                setLocate("ar")
+                recreate()
+            }
+            dialog.dismiss()
         }
-//        val textV = findViewById<TextView>(R.id.textView2)
-//        val buttonClick = findViewById<Button>(R.id.blogin)
-//val signb = findViewById<TextView>(R.id.signupb)
-//        signb.setOnClickListener{
-//            val intent = Intent(this, Register::class.java)
-//            startActivity(intent)
-//        }
-//        buttonClick.setOnClickListener {
-//              //  val intent = Intent(this, homeActivity::class.java)
-//
-//login()
-//
-//        }
-//
-//    }
-//    private fun login () {
-//        val emailTxt = findViewById<View>(R.id.emailTxt) as EditText
-//        var email = emailTxt.text.toString()
-//        val passwordTxt = findViewById<View>(R.id.passwordTxt) as EditText
-//        var password = passwordTxt.text.toString()
-//
-//        if (!email.isEmpty() && !password.isEmpty()) {
-//            this.mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener ( this, OnCompleteListener<AuthResult> { task ->
-//                if (task.isSuccessful) {
-//                    //     startActivity(Intent(this, Timeline::class.java))
-//                    Toast.makeText(this, "mrgla ", Toast.LENGTH_LONG).show()
-//
-//                    val intent = Intent(this, homeActivity::class.java)
-//            startActivity(intent)
-//                } else {
-//                    Toast.makeText(this, "thabett", Toast.LENGTH_SHORT).show()
-//                }
-//            })
-//
-//        }else {
-//            Toast.makeText(this, "8alet", Toast.LENGTH_SHORT).show()
-//        }
+        val mDialog = mBuilder.create()
+        mDialog.show()
+    }
+
+    private fun setLocate(Lang: String) {
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+
+        val config = Configuration()
+
+        config.locale = locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
+        editor.putString("My_Lang", Lang)
+        editor.apply()
+    }
+
+}
+
 
 

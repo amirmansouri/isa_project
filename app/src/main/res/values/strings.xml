@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Isa_mobile</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="login" translatable="true">LOGIN</string>
+    <string name="Register" translatable="true">REGISTER</string>
+    <string name="Name" translatable="true">Name</string>
+    <string name="Phone" translatable="true">Phone</string>
+    <string name="Email" translatable="true">Email</string>
+    <string name="Password" translatable="true">Password</string>
+    <string name="ISA_Register" translatable="true">ISA Register</string>
+    <string name="Enter_the_Details" translatable="true">Enter the Details</string>
+    <string name="wrong_data" translatable="true">wrong data</string>
+    <string name="Home">Home</string>
+    <string name="camera">Camera</string>
+    <string name="Report">Report</string>
+    <string name="profile">Profile</string>
+    <string name="Article">Article</string>
+    <string name="language">language</string>
+    <string name="multi" translatable="false">button1\button2</string>
+
 </resources>

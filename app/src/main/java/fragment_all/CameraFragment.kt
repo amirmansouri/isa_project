@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.SystemClock
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
@@ -24,8 +25,8 @@ import java.util.*
 
 
 class cameraFragment : Fragment() {
-lateinit var binding: ActivityHomeBinding
-lateinit var ImageUri: URI
+    lateinit var binding: ActivityHomeBinding
+    lateinit var ImageUri: URI
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,9 +40,9 @@ lateinit var ImageUri: URI
 
 
         view.bcamera.setOnClickListener(View.OnClickListener {
-           val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-startActivityForResult(intent,100);
-       //  uploadImag();
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intent, 100);
+            //  uploadImag();
         })
 
 
@@ -57,17 +58,17 @@ startActivityForResult(intent,100);
         val now = Date()
         val fileName = formatter.format(now)
         val storageReference = FirebaseStorage.getInstance("images/$fileName")
-      //  storageReference.putFile(ImageUri)
+        //  storageReference.putFile(ImageUri)
     }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode ==100 && resultCode ==Activity.RESULT_OK){
-           val takeimage =  data?.extras?.get("data")as Bitmap
+        if (requestCode == 100 && resultCode == Activity.RESULT_OK) {
+            val takeimage = data?.extras?.get("data") as Bitmap
             imagescan.setImageBitmap(takeimage)
 
-        }else{
+        } else {
 
         }
     }
