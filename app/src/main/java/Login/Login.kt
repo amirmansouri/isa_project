@@ -4,15 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.isa_mobile.R
 import com.google.firebase.auth.FirebaseAuth
-import fragment_all.ProfileFragment
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
@@ -34,7 +31,8 @@ class Login : AppCompatActivity() {
         changeLangue.setOnClickListener {
             showlang()
         }
-        Login.setOnClickListener {
+
+                Login.setOnClickListener {
             if (checking()) {
                 val email = Email.text.toString()
                 val password = Password.text.toString()
@@ -44,7 +42,9 @@ class Login : AppCompatActivity() {
 
                         if (task.isSuccessful) {
 
-                            var intent = Intent(this, homeActivity::class.java)
+                   var intent = Intent(this, homeActivity::class.java)
+
+                      //   var intent = Intent(this, salut::class.java)
                             intent.putExtra("email", email)
                             startActivity(intent)
                             finish()
@@ -105,7 +105,6 @@ class Login : AppCompatActivity() {
         val mDialog = mBuilder.create()
         mDialog.show()
     }
-
     private fun setLocate(Lang: String) {
         val locale = Locale(Lang)
 

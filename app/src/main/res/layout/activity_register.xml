@@ -140,7 +140,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/PasswordRegister"
-                    android:layout_width="363dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_lock"
                     android:drawablePadding="6dp"

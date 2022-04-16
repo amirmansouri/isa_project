@@ -18,5 +18,8 @@
     <string name="Article">Article</string>
     <string name="language">language</string>
     <string name="multi" translatable="false">button1\button2</string>
-
+    <string name="email_registere_vide">you will need it to log in or if you ever have to Reset your password</string>
+    <string name="phone_vide">what is your number</string>
+    <string name="name_vide">what s your name</string>
+    <string name="pass_vide">what is your password</string>
 </resources>

@@ -27,12 +27,15 @@
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/ic_splash_screen.xml" value="0.134" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/drawable/login_btn_bg.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_login.xml" value="0.20238095238095238" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main.xml" value="0.128" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main2.xml" value="0.15" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_main_test.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_nav_bottom.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_navigation_bottom.xml" value="0.264" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_salut.xml" value="0.246875" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/activity_testdata.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_article.xml" value="0.14479166666666668" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_camera.xml" value="0.136" />
@@ -44,7 +47,7 @@
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_second_screen.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_splash.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_third_screen.xml" value="0.1" />
-        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_todo.xml" value="0.4" />
+        <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_todo.xml" value="0.1" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/layout/fragment_view_pager.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/menu-v26/bottom_nav.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/amiro/AndroidStudioProjects/Isa_mobile/app/src/main/res/menu/bottom_nav.xml" value="0.1" />
