@@ -9,18 +9,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.isa_mobile.R
 import com.google.firebase.auth.FirebaseAuth
+import fragment_all.ProfileFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.*
 
 
 class Login : AppCompatActivity() {
     // private val mAuth = FirebaseAuth.getInstance()
-
+    var auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.hide()
-        val auth = FirebaseAuth.getInstance()
+
 
         Registerbtn.setOnClickListener {
             var intent = Intent(this, Register::class.java)
@@ -31,8 +32,7 @@ class Login : AppCompatActivity() {
         changeLangue.setOnClickListener {
             showlang()
         }
-
-                Login.setOnClickListener {
+        Login.setOnClickListener {
             if (checking()) {
                 val email = Email.text.toString()
                 val password = Password.text.toString()
@@ -41,32 +41,9 @@ class Login : AppCompatActivity() {
                     .addOnCompleteListener(this) { task ->
 
                         if (task.isSuccessful) {
-
-                   var intent = Intent(this, homeActivity::class.java)
-
-                      //   var intent = Intent(this, salut::class.java)
-                            intent.putExtra("email", email)
+                            var intent = Intent(this, homeActivity::class.java)
                             startActivity(intent)
                             finish()
-//                            /***********************************/
-//                            var transaction: FragmentTransaction? =
-//                                supportFragmentManager.beginTransaction()
-//                            var bundle: Bundle? = Bundle()
-//                            val myMessage = "Stack Overflow is cool!"
-//                            bundle!!.putString("message", myMessage)
-//                            val fragInfo = ProfileFragment()
-//                            fragInfo.arguments = bundle
-
-                            //       transaction!!.replace(R.id.layoutEmail, fragInfo).commit()
-
-
-//                            val bundle = Bundle()
-//                            bundle.putString("params", "My String data")
-
-// set MyFragment Arguments
-//                            val myObj = ProfileFragment()
-//                            myObj.setArguments(bundle)
-
                         } else {
                             val wrong = getString(R.string.wrong_data)
                             Toast.makeText(this, "$wrong", Toast.LENGTH_LONG).show()
@@ -74,7 +51,6 @@ class Login : AppCompatActivity() {
                     }
             } else {
                 val detail = getString(R.string.Enter_the_Details)
-
                 Toast.makeText(this, "$detail", Toast.LENGTH_LONG).show()
             }
         }
@@ -105,21 +81,27 @@ class Login : AppCompatActivity() {
         val mDialog = mBuilder.create()
         mDialog.show()
     }
+
     private fun setLocate(Lang: String) {
         val locale = Locale(Lang)
-
         Locale.setDefault(locale)
-
         val config = Configuration()
-
         config.locale = locale
         baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
-
         val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
         editor.putString("My_Lang", Lang)
         editor.apply()
     }
-
+//    override fun onResume() {
+//
+//        auth = FirebaseAuth.getInstance()
+//        val currentUser = auth.currentUser
+//        if(currentUser != null){
+//            val i = Intent(this,homeActivity::class.java)
+//            startActivity(i)
+//        }
+//        super.onResume()
+//    }
 }
 
 

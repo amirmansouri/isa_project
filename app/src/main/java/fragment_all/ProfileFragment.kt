@@ -1,87 +1,57 @@
 package fragment_all
 
-
-import android.content.ContentValues.TAG
+import Login.Login
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.isa_mobile.R
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var TextView: TextView
-    private lateinit var database: DatabaseReference
-    lateinit var firestore: FirebaseFirestore
+    lateinit var auth: FirebaseAuth
+    private lateinit var databaseReference: DatabaseReference
+    lateinit var database: FirebaseDatabase
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-//        val myString = arguments?.getString("message")
-//        Toast.makeText(this@ProfileFragment.context, " msg $myString", Toast.LENGTH_LONG).show()
-        if (getArguments() != null) {
-         val   mParam1 = getArguments()?.getString("params");
-            Toast.makeText(this@ProfileFragment.context, " msg $mParam1", Toast.LENGTH_LONG).show()
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database.reference.child("user")
+        loadProfile()
+        view.out.setOnClickListener {
+            //  Toast.makeText(this@ProfileFragment.context, "mmqg ", Toast.LENGTH_LONG).show()
+            val intent = Intent(this@ProfileFragment.context, Login::class.java)
+            startActivity(intent)
         }
-
- //    readData()
         return view
-
     }
-    private fun readData() {
 
-        //      profile_email.text=emailConnected.toString()
-
-//            val db = FirebaseFirestore.getInstance()
-//            db.collection("userISA")
-//                .get().addOnCompleteListener {
-//                    val result: StringBuffer = StringBuffer()
-//                    if (it.isSuccessful) {
-//                        for (document in it.result!!) {
-//
-//
-//                      //  if (document.id.equals("salah")) {
-//db.collection("userISA").document("amir").collection("Name").get().then(que)
-//
-//
-//                              profile_name.text=result.append(document.data.getValue("Name"))
-//                                profile_email.text=(document.data.getValue("email") as CharSequence?)
-//                             //   profile_num.text=result.append(document.data.getValue("phone"))
-//                            }
-//
-//
-//                        }
-//
-//                    }
-        val amir = "amirmansouri@gmail.fr"
-        val db = FirebaseFirestore.getInstance()
-        val docRef = db.collection("userISA").document(amir)
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    profile_email.text = document.data?.getValue("email").toString()
-                    profile_name.text = document.data?.getValue("Name").toString()
-
-                } else {
-                    Log.d(TAG, "No such document")
-                }
+    private fun loadProfile() {
+        val user = auth.currentUser
+        val userreference = databaseReference?.child(user?.uid!!)
+        //profile_email.text = user?.email
+        userreference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                profile_name.text = snapshot.child("name").value.toString()
+                profile_email.text = snapshot.child("email").value.toString()
+                profile_num.text = snapshot.child("phone").value.toString()
             }
-            .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
             }
+        })
     }
 }
 

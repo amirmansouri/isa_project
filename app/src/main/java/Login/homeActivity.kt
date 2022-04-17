@@ -29,7 +29,7 @@ class homeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment_nav)
         bottomNavigationView.setupWithNavController(navController)
        weatherTask().execute()
-setdata()
+
     }
 //api weather openweathermap.org
     inner class weatherTask() : AsyncTask<String, Void, String>() {
@@ -107,10 +107,6 @@ setdata()
 
         }
     }
-  fun setdata(){
-      val sessionId = intent.getStringExtra("amir")
-      Toast.makeText(this@homeActivity,"data en "+sessionId,Toast.LENGTH_LONG).show()
-  }
 
 
 
